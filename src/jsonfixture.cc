@@ -43,9 +43,9 @@ const std::vector<std::string> &GetTestJsonFileNames() noexcept
 void CustomJsonFixtrueArguments(::benchmark::internal::Benchmark *b) noexcept
 {
   const auto &filenames = GetTestJsonFileNames();
-  for (std::int64_t i = 0; i < filenames.size(); ++i)
+  for (std::int64_t i = 0; i < std::int64_t(filenames.size()); ++i)
   {
-    for (std::int64_t j = 1; j <= 1024; j *= 2)
+    for (std::int64_t j = 1; j <= 512; j *= 2)
       b->Args({i, j});
   }
   b->Unit(::benchmark::kMillisecond);
