@@ -12,8 +12,14 @@ BENCHMARK_DEFINE_F(JsonFixtrue, NlohmannJson)
   }
   for (const auto _ : state)
   {
+    state.PauseTiming();
     for (std::int64_t i = 0; i < state.range(1); ++i)
-      json::parse(GetData());
+    {
+      state.ResumeTiming();
+      auto j = std::move(json::parse(GetData()));
+      state.PauseTiming();
+    }
+    state.ResumeTiming();
   }
 }
 

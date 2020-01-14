@@ -1,6 +1,7 @@
 #include "jsonfixture.h"
 #include "rapidjson/document.h"
 
+
 BENCHMARK_DEFINE_F(JsonFixtrue, TencentRapidJson)
 (::benchmark::State &state)
 {
@@ -12,13 +13,15 @@ BENCHMARK_DEFINE_F(JsonFixtrue, TencentRapidJson)
   }
   for (const auto _ : state)
   {
+    state.PauseTiming();
     for (std::int64_t i = 0; i < state.range(1); ++i)
     {
-      state.PauseTiming();
       Document doc;
       state.ResumeTiming();
       doc.Parse(GetData());
+      state.PauseTiming();
     }
+    state.ResumeTiming();
   }
 }
 
