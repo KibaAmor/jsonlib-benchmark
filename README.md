@@ -13,6 +13,12 @@ Library | Version | Notes
 
 ## How to build
 
+### Generate file
+
+```shell
+python ./init.py
+```
+
 ### Install bazel
 
 ### Build

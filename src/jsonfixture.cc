@@ -1,4 +1,5 @@
 #include "jsonfixture.h"
+#include "gen_projpath.h"
 #include <cstdint>
 #include <fstream>
 
@@ -33,9 +34,9 @@ void JsonFixtrue::TearDown(const ::benchmark::State &state)
 const std::vector<std::string> &GetTestJsonFileNames() noexcept
 {
   static const std::vector<std::string> filenames = {
-      R"(D:\repos\jsonlib-benchmark\data\canada.json)",
-      R"(D:\repos\jsonlib-benchmark\data\citm_catalog.json)",
-      R"(D:\repos\jsonlib-benchmark\data\twitter.json)",
+      PROJECT_ROOT_PATH "/data/canada.json",
+      PROJECT_ROOT_PATH "/data/citm_catalog.json",
+      PROJECT_ROOT_PATH "/data/twitter.json",
   };
   return filenames;
 }
