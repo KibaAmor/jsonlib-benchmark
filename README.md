@@ -2,7 +2,9 @@
 
 ## JSON data
 
-copy from [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark)
+[data/sample.json](https://github.com/KibaAmor/jsonlib-benchmark/blob/master/data/sample.json) from [json-test-suite](https://code.google.com/p/json-test-suite/downloads/list)
+
+[others](https://github.com/KibaAmor/jsonlib-benchmark/tree/master/data) from [nativejson-benchmark](https://github.com/miloyip/nativejson-benchmark)
 
 ## Libraries
 
@@ -11,7 +13,9 @@ Library | Version | Notes
 [json](https://github.com/nlohmann/json) | 3.7.3
 [rapidjson](https://github.com/Tencent/rapidjson) | 1.1.0
 
-## How to build
+## How to benchmark
+
+### Install python and bazel
 
 ### Generate file
 
@@ -19,23 +23,13 @@ Library | Version | Notes
 python ./init.py
 ```
 
-### Install bazel
-
-### Build
-
-```shell
-bazel build -c opt //...
-```
-
-### Test
+### Test And Benchmark
 
 ```shell
 bazel test -c opt //...
 ```
+check benchmark data at bazel-testlogs/src/*/benchmark/test.log
 
-### Benchmark
-
-```shell
-bazel run -c opt //src/nlohmann_json:benchmark
-bazel run -c opt //src/tencent_rapidjson:benchmark
+```shell 
+cat bazel-testlogs/src/*/benchmark/test.log
 ```

@@ -1,4 +1,4 @@
-load("@rules_cc//cc:defs.bzl", "cc_test", "cc_binary")
+load("@rules_cc//cc:defs.bzl", "cc_test")
 
 cc_test(
     name = "test",
@@ -10,7 +10,7 @@ cc_test(
     ],
 )
 
-cc_binary(
+cc_test(
     name = "benchmark",
     srcs = glob(["*.b.cc"]),
     deps = [
