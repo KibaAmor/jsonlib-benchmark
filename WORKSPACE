@@ -17,17 +17,17 @@ http_archive(
 
 http_archive(
   name = "com_github_google_benchmark",
-  strip_prefix = "benchmark-1.5.0",
-  urls = ["https://github.com/google/benchmark/archive/v1.5.0.tar.gz"],
-  sha256 = "3c6a165b6ecc948967a1ead710d4a181d7b0fbcaa183ef7ea84604994966221a",
+  strip_prefix = "benchmark-1.5.2",
+  urls = ["https://github.com/google/benchmark/archive/v1.5.2.tar.gz"],
+  sha256 = "dccbdab796baa1043f04982147e67bb6e118fe610da2c65f88912d73987e700c",
 )
 
 ## https://github.com/nlohmann/json
 http_archive(
   name = "com_github_nlohmann_json",
-  urls = ["https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip"],
+  urls = ["https://github.com/nlohmann/json/releases/download/v3.9.1/include.zip"],
   build_file = "nlohmann_json.BUILD",
-  sha256 = "87b5884741427220d3a33df1363ae0e8b898099fbc59f1c451113f6732891014",
+  sha256 = "6bea5877b1541d353bd77bdfbdb2696333ae5ed8f9e8cc22df657192218cad91",
 )
 
 ## https://github.com/Tencent/rapidjson/

@@ -1,2 +1,3 @@
 bazel*
 src/gen_*
+.vscode

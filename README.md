@@ -10,26 +10,26 @@
 
 Library | Version | Notes
 --------|---------|------
-[json](https://github.com/nlohmann/json) | 3.7.3
+[json](https://github.com/nlohmann/json) | 3.9.1
 [rapidjson](https://github.com/Tencent/rapidjson) | 1.1.0
 
 ## How to benchmark
 
-### Install python and bazel
+### Install python3 and bazel
 
 ### Generate file
 
-```shell
-python ./init.py
+```bash
+python3 ./init.py
 ```
 
 ### Test And Benchmark
 
-```shell
+```bash
 bazel test -c opt //...
 ```
 check benchmark data at bazel-testlogs/src/*/benchmark/test.log
 
-```shell 
+```bash
 cat bazel-testlogs/src/*/benchmark/test.log
 ```
